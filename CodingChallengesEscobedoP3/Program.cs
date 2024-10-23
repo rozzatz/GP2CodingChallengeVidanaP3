@@ -16,9 +16,10 @@ class Challenges
             Console.WriteLine("2. this one converts minutes to seconds");
             Console.WriteLine("3. This one adds 1 to a number of your choosing");
             Console.WriteLine("4. this one will calculate circuit power");
-            Console.WriteLine("5. Cthis one turns your age in years into your age in days");
+            Console.WriteLine("5. this one turns your age in years into your age in days");
             Console.WriteLine("6. this one will calculate the area of a triangle");
             Console.WriteLine("7. and this one will check if a number you type is positive or negative");
+            Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -45,6 +46,9 @@ class Challenges
                     break;
                 case "7":
                     CheckIfNumberIsPositiveOrNegative();
+                    break;
+                case "8":
+                    SumTotal100();
                     break;
                 case "0":
                     running = false;
@@ -103,6 +107,14 @@ class Challenges
         Console.WriteLine($"The number is {(IsNegative(number) ? "negative" : "positive")}.");
     }
 
+    private static void SumTotal100()
+    {
+        Console.WriteLine($"ok so youre gonna give me two numbers and i will check if the sum total is less than 100");
+        int number1 = GetIntegerInput("Please enter the first number:");
+        int number2 = GetIntegerInput("Please enter the second number:");
+        Console.WriteLine($"The number is {(AddnCheck(number1,number2) ? "less than 100" : "more than 100")}.");
+    }
+
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -136,6 +148,11 @@ class Challenges
     private static bool IsNegative(int number)
     {
         return number < 0;
+    }
+
+    private static bool AddnCheck(int number1, int number2)
+    {
+        return number1 + number2 < 100;
     }
 
     private static int GetIntegerInput(string prompt)
