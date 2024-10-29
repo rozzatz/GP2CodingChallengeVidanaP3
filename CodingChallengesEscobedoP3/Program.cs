@@ -20,6 +20,7 @@ class Challenges
             Console.WriteLine("6. this one will calculate the area of a triangle");
             Console.WriteLine("7. and this one will check if a number you type is positive or negative");
             Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
+            Console.WriteLine("9. this a one will check if two integers are the same");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -49,6 +50,9 @@ class Challenges
                     break;
                 case "8":
                     SumTotal100();
+                    break;
+                case "9":
+                    CheckIf();
                     break;
                 case "0":
                     running = false;
@@ -112,10 +116,17 @@ class Challenges
         Console.WriteLine($"ok so youre gonna give me two numbers and i will check if the sum total is less than 100");
         int number1 = GetIntegerInput("Please enter the first number:");
         int number2 = GetIntegerInput("Please enter the second number:");
-        Console.WriteLine($"The number is {(AddnCheck(number1,number2) ? "less than 100" : "more than 100")}.");
+        Console.WriteLine($"The number is {(AddnCheck(number1,number2) ? "less than or equal to 100" : "greater than or equal to 100")}.");
     }
+    private static void CheckIf()
+    {
+        Console.WriteLine($"ok so youre gonna give me two numbers and i will check if the sum total is less than 100");
+        int number1 = GetIntegerInput("Please enter the first number:");
+        int number2 = GetIntegerInput("Please enter the second number:");
+        Console.WriteLine($"These numbers are {(Checker(number1, number2) ? "equal;" : "not equal")}.");
 
-    private static int Sum(int number1, int number2)
+    }
+        private static int Sum(int number1, int number2)
     {
         return number1 + number2;
     }
@@ -155,6 +166,10 @@ class Challenges
         return number1 + number2 < 100;
     }
 
+    private static bool Checker(int number1, int number2)
+    {
+        return number1 == number2;
+    }
     private static int GetIntegerInput(string prompt)
     {
         Console.WriteLine(prompt);
