@@ -120,10 +120,10 @@ class Challenges
     }
     private static void CheckIf()
     {
-        Console.WriteLine($"ok so youre gonna give me two numbers and i will check if the sum total is less than 100");
+        Console.WriteLine($"im gonna check if two numbers you type are equal to eacxhother");
         int number1 = GetIntegerInput("Please enter the first number:");
         int number2 = GetIntegerInput("Please enter the second number:");
-        Console.WriteLine($"These numbers are {(Checker(number1, number2) ? "equal;" : "not equal")}.");
+        Console.WriteLine($"These numbers are {(Checker(number1, number2) ? "equal;" : "not equal")}");
 
     }
         private static int Sum(int number1, int number2)
