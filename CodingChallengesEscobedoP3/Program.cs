@@ -21,6 +21,7 @@ class Challenges
             Console.WriteLine("7. and this one will check if a number you type is positive or negative");
             Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
             Console.WriteLine("9. this a one will check if two integers are the same");
+            Console.WriteLine("10. type in a prompt and the word something will be added before your prompt");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -53,6 +54,9 @@ class Challenges
                     break;
                 case "9":
                     CheckIf();
+                    break;
+                case "10":
+                    StringChee();
                     break;
                 case "0":
                     running = false;
@@ -126,7 +130,16 @@ class Challenges
         Console.WriteLine($"These numbers are {(Checker(number1, number2) ? "equal;" : "not equal")}");
 
     }
-        private static int Sum(int number1, int number2)
+
+    private static void StringChee()
+    {
+        Console.Write("Please enter something: ");
+        string userInput = Console.ReadLine();
+        string result = JoinSomething(userInput);
+        Console.WriteLine(result);
+
+    }
+    private static int Sum(int number1, int number2)
     {
         return number1 + number2;
     }
@@ -179,6 +192,11 @@ class Challenges
                 return result;
             Console.WriteLine("Invalid input. Please enter a valid integer.");
         }
+    }
+
+    static string JoinSomething(string a)
+    {
+        return "something " + a;
     }
 
     private static float GetFloatInput(string prompt)
