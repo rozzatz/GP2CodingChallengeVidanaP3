@@ -22,6 +22,7 @@ class Challenges
             Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
             Console.WriteLine("9. this a one will check if two integers are the same");
             Console.WriteLine("10. type in a prompt and the word something will be added before your prompt");
+            Console.WriteLine("11. give a boolean value and get the opposite returned");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -57,6 +58,9 @@ class Challenges
                     break;
                 case "10":
                     StringChee();
+                    break;
+                case "11":
+                    GasLight();
                     break;
                 case "0":
                     running = false;
@@ -139,10 +143,18 @@ class Challenges
         Console.WriteLine(result);
 
     }
+
+    private static void GasLight()
+    {
+        Console.WriteLine($"ok give me a bool and i will reverse it when i return it");
+       // bool boolandra = GetBoolInput("enter true or false");
+          Console.WriteLine($"The reverse of your bool is {(BoolCheck(boolandra) ? "False" : "True")}");
+    }
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
     }
+     
 
     private static int Multiply(int minutes)
     {
@@ -210,6 +222,9 @@ class Challenges
         }
     }
 
-
+    private static bool BoolCheck(bool boolandra)
+    {
+        return boolandra;
+    }
 
 }
