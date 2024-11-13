@@ -22,7 +22,7 @@ class Challenges
             Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
             Console.WriteLine("9. this a one will check if two integers are the same");
             Console.WriteLine("10. type in a prompt and the word something will be added before your prompt");
-            Console.WriteLine("11. give a boolean value and get the opposite returned");
+            Console.WriteLine("12. type in a prompt and the word something will be added before your prompt");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -59,8 +59,8 @@ class Challenges
                 case "10":
                     StringChee();
                     break;
-                case "11":
-                    GasLight();
+                case "12":
+                    hours2secs();
                     break;
                 case "0":
                     running = false;
@@ -137,19 +137,21 @@ class Challenges
 
     private static void StringChee()
     {
-        Console.Write("Please enter something: ");
+        Console.WriteLine("Please enter something: ");
         string userInput = Console.ReadLine();
         string result = JoinSomething(userInput);
         Console.WriteLine(result);
 
     }
 
-    private static void GasLight()
+    private static void hours2secs()
     {
-        Console.WriteLine($"ok give me a bool and i will reverse it when i return it");
-       // bool boolandra = GetBoolInput("enter true or false");
-          Console.WriteLine($"The reverse of your bool is {(BoolCheck(boolandra) ? "False" : "True")}");
+        Console.WriteLine($"you will input the hours and i will return the seconds");
+        int number1 = GetIntegerInput("Please enter the first number:");
+        Console.WriteLine($"{number1} hours is {Hours2Secs(number1)} seconds.");
     }
+
+    
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -222,9 +224,10 @@ class Challenges
         }
     }
 
-    private static bool BoolCheck(bool boolandra)
+    private static int Hours2Secs(int number1)
     {
-        return boolandra;
+        return number1 * 60 * 60;
     }
+    
 
 }
