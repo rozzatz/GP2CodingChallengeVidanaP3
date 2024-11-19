@@ -22,7 +22,8 @@ class Challenges
             Console.WriteLine("8. this one will check if two numbers added together is less than or greater than 100");
             Console.WriteLine("9. this a one will check if two integers are the same");
             Console.WriteLine("10. type in a prompt and the word something will be added before your prompt");
-            Console.WriteLine("12. type in a prompt and the word something will be added before your prompt");
+            Console.WriteLine("12. conert hours to seconds");
+            Console.WriteLine("14. add edabit to the end of your prompt");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -61,6 +62,9 @@ class Challenges
                     break;
                 case "12":
                     hours2secs();
+                    break;
+                case "14":
+                    CheeString();
                     break;
                 case "0":
                     running = false;
@@ -151,7 +155,15 @@ class Challenges
         Console.WriteLine($"{number1} hours is {Hours2Secs(number1)} seconds.");
     }
 
-    
+    private static void CheeString()
+    {
+        Console.WriteLine("Please enter something: ");
+        string userInput = Console.ReadLine();
+        string result = JoinEdabit(userInput);
+        Console.WriteLine(result);
+
+    }
+
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -228,6 +240,13 @@ class Challenges
     {
         return number1 * 60 * 60;
     }
+
+
+    static string JoinEdabit(string a)
+    {
+        return a + "edabit " ;
+    }
+
     
 
 }
