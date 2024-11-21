@@ -24,6 +24,7 @@ class Challenges
             Console.WriteLine("10. type in a prompt and the word something will be added before your prompt");
             Console.WriteLine("12. conert hours to seconds");
             Console.WriteLine("14. add edabit to the end of your prompt");
+            Console.WriteLine("15. something or another");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -65,6 +66,9 @@ class Challenges
                     break;
                 case "14":
                     CheeString();
+                    break;
+                case "15":
+                    doubleAmpersand();
                     break;
                 case "0":
                     running = false;
@@ -164,6 +168,54 @@ class Challenges
 
     }
 
+    private static void doubleAmpersand()
+    {
+        // Prompt the user to input a string
+        Console.WriteLine("Enter a boolean value (true or false):");
+
+        // Read user input as a string
+        string userInput = Console.ReadLine();
+
+        // Try to convert the user input to a boolean
+        bool result;
+        bool success = bool.TryParse(userInput, out result);
+
+        // Check if conversion was successful
+        if (success)
+        {
+            Console.WriteLine("You entered a valid boolean value: " + result);
+
+            // Prompt the user to input a string
+            Console.WriteLine("Enter a boolean value (true or false):");
+
+            // Read user input as a string
+            string userInput2 = Console.ReadLine();
+
+            // Try to convert the user input to a boolean
+            bool result2;
+            bool success2 = bool.TryParse(userInput2, out result2);
+
+            if (success2)
+            {
+                Console.WriteLine("You entered a valid boolean value: " + result2);
+                Console.WriteLine("after calculating i have come to the decision that  "  + result + result2 + " is "+ checkered(result, result2));
+
+            }
+            else
+            {
+                Console.WriteLine("Invalid input! Please enter 'true' or 'false'.");
+                doubleAmpersand();
+            }
+
+        }
+        else
+        {
+            Console.WriteLine("Invalid input! Please enter 'true' or 'false'.");
+            doubleAmpersand();
+
+        }
+    }
+
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -247,6 +299,12 @@ class Challenges
         return a + "edabit " ;
     }
 
-    
+    private static bool checkered(bool result, bool result2)
+    {
+        return result;
+
+    }
+
+
 
 }
