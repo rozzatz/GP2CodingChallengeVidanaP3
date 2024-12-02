@@ -5,7 +5,7 @@ class Challenges
 {
     public static void Main(string[] args)
     {
-      
+
         Console.WriteLine("Whats up bitch maintinence is complete");
         bool running = true;
 
@@ -25,6 +25,7 @@ class Challenges
             Console.WriteLine("12. conert hours to seconds");
             Console.WriteLine("14. add edabit to the end of your prompt");
             Console.WriteLine("15. something or another");
+            Console.WriteLine("16.basketball scores");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -69,6 +70,9 @@ class Challenges
                     break;
                 case "15":
                     doubleAmpersand();
+                    break;
+                case "16":
+                    basketball();
                     break;
                 case "0":
                     running = false;
@@ -132,7 +136,7 @@ class Challenges
         Console.WriteLine($"ok so youre gonna give me two numbers and i will check if the sum total is less than 100");
         int number1 = GetIntegerInput("Please enter the first number:");
         int number2 = GetIntegerInput("Please enter the second number:");
-        Console.WriteLine($"The number is {(AddnCheck(number1,number2) ? "less than or equal to 100" : "greater than or equal to 100")}.");
+        Console.WriteLine($"The number is {(AddnCheck(number1, number2) ? "less than or equal to 100" : "greater than or equal to 100")}.");
     }
     private static void CheckIf()
     {
@@ -198,7 +202,7 @@ class Challenges
             if (success2)
             {
                 Console.WriteLine("You entered a valid boolean value: " + result2);
-                Console.WriteLine("after calculating i have come to the decision that  "  + result + result2 + " is "+ checkered(result, result2));
+                Console.WriteLine("after calculating i have come to the decision that  " + result + result2 + " is " + checkered(result, result2));
 
             }
             else
@@ -214,6 +218,15 @@ class Challenges
             doubleAmpersand();
 
         }
+    }
+
+    private static void basketball()
+
+        {
+        Console.WriteLine($"youre gonna enter the numbers of 2 pointers and the number of 3 pointers");
+        int number1 = GetIntegerInput("Please enter the amount of 2 pointers:");
+        int number2 = GetIntegerInput("Please enter the amount of 3 pointers:");
+        Console.WriteLine($"points("+number1 + "," + number2 + ") ➞ " + smasket(number1,number2));
     }
 
     private static int Sum(int number1, int number2)
@@ -305,6 +318,10 @@ class Challenges
 
     }
 
+    private static int smasket(int number1, int number2)
+    {
+        return number1 * 2 + number2 *3;
+    }
 
 
 }
