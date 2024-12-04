@@ -26,6 +26,7 @@ class Challenges
             Console.WriteLine("14. add edabit to the end of your prompt");
             Console.WriteLine("15. something or another");
             Console.WriteLine("16.basketball scores");
+            Console.WriteLine("17. rectangle area finder");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -73,6 +74,9 @@ class Challenges
                     break;
                 case "16":
                     basketball();
+                    break;
+                case "17":
+                    areafinder();
                     break;
                 case "0":
                     running = false;
@@ -227,6 +231,15 @@ class Challenges
         int number1 = GetIntegerInput("Please enter the amount of 2 pointers:");
         int number2 = GetIntegerInput("Please enter the amount of 3 pointers:");
         Console.WriteLine($"points("+number1 + "," + number2 + ") ➞ " + smasket(number1,number2));
+    }
+
+    private static void areafinder()
+
+    {
+        Console.WriteLine($"youre gonna enter the width and length of a rectangle and i will calculate the area");
+        int voltage = GetIntegerInput("Please enter the width of the rectangle");
+        int current = GetIntegerInput("Please enter the length ofd the rectangle");
+        Console.WriteLine($"a rectangle with a width of " + voltage + " and a length of " + current +  "will have an area of " + Circuit(voltage, current));
     }
 
     private static int Sum(int number1, int number2)
