@@ -27,6 +27,8 @@ class Challenges
             Console.WriteLine("15. something or another");
             Console.WriteLine("16.basketball scores");
             Console.WriteLine("17. rectangle area finder");
+            Console.WriteLine("18.introduce yourself");
+            Console.WriteLine("19. farming simulator");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -77,6 +79,12 @@ class Challenges
                     break;
                 case "17":
                     areafinder();
+                    break;
+                case "18":
+                    StringChees();
+                    break;
+                case "19":
+                    farmy();
                     break;
                 case "0":
                     running = false;
@@ -242,6 +250,26 @@ class Challenges
         Console.WriteLine($"a rectangle with a width of " + voltage + " and a length of " + current +  "will have an area of " + Circuit(voltage, current));
     }
 
+    private static void StringChees()
+    {
+        Console.WriteLine("Please enter your name: ");
+        string userInput = Console.ReadLine();
+        string result = JoinHello(userInput);
+        Console.WriteLine(result);
+    }
+
+    private static void farmy()
+
+    {
+        Console.WriteLine($"youre gonna tell me how many animals of each kind and i will count up their legs");
+        int number1 = GetIntegerInput("Please enter the amount of chickens:");
+        int number2 = GetIntegerInput("Please enter the amount of cows:");
+        int number3 = GetIntegerInput("Please enter the amount of pigs:");
+        Console.WriteLine($"" + number1 + "chicken(s) + " + number2 + "cow(s) " + number3 + "pig(s) total up to " + sammy(number1, number2, number3) + " LEGS ");
+    }
+
+
+
     private static int Sum(int number1, int number2)
     {
         return number1 + number2;
@@ -303,7 +331,12 @@ class Challenges
         return "something " + a;
     }
 
-    private static float GetFloatInput(string prompt)
+static string JoinHello(string a)
+{
+    return "Hello " + a;
+}
+
+private static float GetFloatInput(string prompt)
     {
         Console.WriteLine(prompt);
         while (true)
@@ -334,6 +367,11 @@ class Challenges
     private static int smasket(int number1, int number2)
     {
         return number1 * 2 + number2 *3;
+    }
+
+    private static int sammy(int number1, int number2, int number3)
+    {
+        return number1 * 2 + number2 * 4 + number3 * 4;
     }
 
 
