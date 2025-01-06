@@ -29,6 +29,7 @@ class Challenges
             Console.WriteLine("17. rectangle area finder");
             Console.WriteLine("18.introduce yourself");
             Console.WriteLine("19. farming simulator");
+            Console.WriteLine("20. calender");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -85,6 +86,9 @@ class Challenges
                     break;
                 case "19":
                     farmy();
+                    break;
+                case "20":
+                    month();
                     break;
                 case "0":
                     running = false;
@@ -268,9 +272,71 @@ class Challenges
         Console.WriteLine($"" + number1 + "chicken(s) + " + number2 + "cow(s) " + number3 + "pig(s) total up to " + sammy(number1, number2, number3) + " LEGS ");
     }
 
+    private static void month()
+
+    {
+        int number1 = GetIntegerInput("enter a number 1-12");
+
+        if (number1 == 1)
+        {
+             Console.WriteLine("january");
+        }
+        else if (number1 == 2)
+        {
+             Console.WriteLine("febuary");
+        }
+        else if (number1 == 3)
+        {
+             Console.WriteLine("march");
+        }
+        else if (number1 == 4)
+        {
+             Console.WriteLine("april");
+        }
+        else if (number1 == 5)
+        {
+            ;
+             Console.WriteLine("may");
+        }
+        else if (number1 == 6)
+        {
+             Console.WriteLine("june");
+        }
+        else if (number1 == 7)
+        {
+             Console.WriteLine("july");
+        }
+        else if (number1 == 8)
+        {
+             Console.WriteLine("august");
+        }
+        else if (number1 == 9)
+        {
+             Console.WriteLine("september");
+        }
+        else if (number1 == 10)
+        {
+             Console.WriteLine("october");
+        }
+        else if (number1 == 11)
+        {
+             Console.WriteLine("november");
+        }
+        else if (number1 == 12)
+        {
+             Console.WriteLine("december");
+        }
+        else
+        {
+            month();
+
+        }
+    }
 
 
-    private static int Sum(int number1, int number2)
+
+
+        private static int Sum(int number1, int number2)
     {
         return number1 + number2;
     }
