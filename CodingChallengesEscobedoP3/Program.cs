@@ -6,7 +6,7 @@ class Challenges
     public static void Main(string[] args)
     {
 
-        Console.WriteLine("Whats up bitch maintinence is complete");
+        Console.WriteLine("Whats up snitch maintinence is complete");
         bool running = true;
 
         while (running)
@@ -30,6 +30,7 @@ class Challenges
             Console.WriteLine("18.introduce yourself");
             Console.WriteLine("19. farming simulator");
             Console.WriteLine("20. calender");
+            Console.WriteLine("21. calender");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -89,6 +90,9 @@ class Challenges
                     break;
                 case "20":
                     month();
+                    break;
+                case "21":
+                    Array();
                     break;
                 case "0":
                     running = false;
@@ -329,6 +333,20 @@ class Challenges
         else
         {
             month();
+
+        }
+    }
+
+    private static void Array()
+    {
+        int number = GetIntegerInput("how long do you want your array to be");
+        int[] arr = new int[number-1];  
+        int i;
+        for (i = 0; i < 10; i++)
+        {
+            Console.Write("element - {0} : ", i);  
+         
+            arr[i] = Convert.ToInt32(Console.ReadLine());
 
         }
     }
