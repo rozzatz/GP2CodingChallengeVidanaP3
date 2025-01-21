@@ -30,7 +30,8 @@ class Challenges
             Console.WriteLine("18.introduce yourself");
             Console.WriteLine("19. farming simulator");
             Console.WriteLine("20. calender");
-            Console.WriteLine("21. calender");
+            Console.WriteLine("21. high or low array");
+            Console.WriteLine("23 funky exponents");
             Console.WriteLine("0. and press 0 to quit");
 
             var choice = Console.ReadLine();
@@ -93,6 +94,9 @@ class Challenges
                     break;
                 case "21":
                     Array();
+                    break;
+                case "23":
+                    Exponent();
                     break;
                 case "0":
                     running = false;
@@ -340,25 +344,44 @@ class Challenges
     private static void Array()
     {
         int number = GetIntegerInput("how long do you want your array to be");
-        int[] arr = new int[number-1];  
-        int i;
-        for (i = 0; i < 10; i++)
+        float[] arr = new float[number];  
+      
+        for (int i = 0; i < arr.Length; i++)
         {
-            Console.Write("element - {0} : ", i);  
-         
-            arr[i] = Convert.ToInt32(Console.ReadLine());
+            Console.Write("element - {0} : ", i);
 
+            var numba = Console.ReadLine();
+            float numbaflow;
+            while (!float.TryParse(numba, out numbaflow))
+            {
+                Console.WriteLine("you did wrong");
+                    numba = Console.ReadLine();
+
+            }
+            arr[i] = numbaflow;
         }
+        Console.WriteLine("the minimum of your array is " + arr.Min() +" and the max is " +arr.Max());
     }
 
-
+    private static void Exponent()
+    {
+        int number1 = GetIntegerInput("Please enter the base number:");
+        int number2 = GetIntegerInput("Please enter the exponent number:");
+        Console.WriteLine($"{number1} to the power of {number2} is {Expon(number1, number2)}.");
+    }
 
 
         private static int Sum(int number1, int number2)
     {
         return number1 + number2;
     }
+
+    private static int Expon(int number1, int number2)
+    {
+        return (int)Math.Pow(number1, number2);
      
+    }
+
 
     private static int Multiply(int minutes)
     {
